@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Thoughts</title>
+    <style>
+        @font-face {
+            font-family: 'Minecraftia';
+            src: url('/Minecraftia.woff2') format('woff2'), /* Adjust the path accordingly */
+                 url('/Minecraftia.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-color: #000; /* Initial background color */
+            color: #fff; /* Text color */
+            font-family: 'Minecraftia', sans-serif; /* Use the hosted Minecraftia font */
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .thoughts-container {
+            margin-top: 10vh; /* Adjust the top margin as needed */
+            padding-left: 20px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+            padding: 5px;
+            transition: text-shadow 0.3s ease, opacity 0.3s ease; /* Smooth transition on color change */
+        }
+
+        a:hover {
+            text-shadow: 2px 2px 0 #{{randomColor()}}; /* Add a shadow with random color on hover */
+            opacity: 0.7; /* Adjust the opacity to your preference */
+        }
+    </style>
+    <script>
+        function randomColor() {
+            // Generate a random hex color code
+            return Math.floor(Math.random()*16777215).toString(16);
+        }
+    </script>
+</head>
+<body>
+    <div class="thoughts-container">
+        <a href="/notes">notes</a><br>
+        <br>
+        <a href="/songs">songs</a><br>
+        <br>
+        <a href="/media">media</a><br>
+        <br>
+        <a href="https://instagram.com/augustskiess">instagram</a>
+    </div>
+    <script>
+        // Change background color on page load
+        document.body.style.backgroundColor = '#' + randomColor();
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+@font-face {
+	font-family: "Kimberley";
+	src: url(http://www.princexml.com/fonts/larabie/kimberle.ttf) format("truetype");
+}
+p1 { font-family: "Kimberley", sans-serif }
