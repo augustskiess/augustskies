@@ -129,7 +129,31 @@
 
     <script>
         window.onload = function() {
-            showNote('note1');
+            // Get all notes
+            var notes = document.querySelectorAll('.note');
+
+            // Set the initial latest note as the first one
+            var latestNote = notes[0];
+
+            // Loop through each note to find the one with the latest date
+            notes.forEach(function(note) {
+                // Get the date text from the menu item
+                var dateText = note.querySelector('.menu-item-text').textContent;
+
+                // Convert the date text to a Date object
+                var noteDate = new Date(dateText);
+
+                // Get the date of the latest note
+                var latestDate = new Date(latestNote.querySelector('.menu-item-text').textContent);
+
+                // If the current note's date is later than the latest note's date, update the latest note
+                if (noteDate > latestDate) {
+                    latestNote = note;
+                }
+            });
+
+            // Display the latest note
+            showNote(latestNote.id);
         };
 
         function showNote(noteId) {
