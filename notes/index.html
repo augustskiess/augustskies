@@ -44,7 +44,7 @@
             padding: 10px;
             margin-bottom: 20px;
             box-sizing: border-box;
-            height: 99.5%;
+            height: 200px;
             overflow-y: auto;
         }
 
@@ -66,9 +66,6 @@
 
         .menu-item-text {
             color: #FFF;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
         }
 
         .menu-item.active .menu-item-text {
@@ -82,9 +79,7 @@
             }
 
             .sidebar {
-                width: auto;
-                max-width: 50%;
-                overflow-x: auto;
+                width: 100%; /* Take full width on small screens */
             }
 
             .main-content {
@@ -98,13 +93,13 @@
         <div class="sidebar" id="sidebar">
             <h2>Notebooks</h2>
             <div class="menu-item active" onclick="showNote('note1')">
-                <div class="menu-item-text">28.01.24</div>
+                <div class="menu-item-text">28.01.24 - The Trials and Tribulations of Being a Band</div>
             </div>
             <div class="menu-item" onclick="showNote('note2')">
-                <div class="menu-item-text">08.01.24</div>
+                <div class="menu-item-text">08.01.24 - Does a Lap Really Exist?</div>
             </div>
             <div class="menu-item" onclick="showNote('note3')">
-                <div class="menu-item-text">06.01.24</div>
+                <div class="menu-item-text">06.01.24 - I Love My BF :]</div>
             </div>
             <!-- Add more menu items as needed -->
         </div>
