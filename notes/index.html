@@ -16,12 +16,12 @@
 
         .container {
             display: flex;
-            height: 100vh;
-            gap: 20px;
+            flex-direction: column; /* Stack elements vertically on small screens */
+            height: 100%;
         }
 
         .sidebar {
-            width: 25%;
+            width: 100%; /* Take full width on small screens */
             background-color: #333;
             padding: 20px;
             box-sizing: border-box;
@@ -44,9 +44,7 @@
             border: 1px solid #666;
             padding: 10px;
             margin-bottom: 20px;
-            height: 98%; 
-            overflow-y: auto; 
-            box-sizing: border-box; 
+            box-sizing: border-box;
         }
 
         .menu-item {
@@ -72,6 +70,22 @@
         .menu-item.active .menu-item-text {
             color: #000;
         }
+
+        /* Media query for screens smaller than 600px */
+        @media only screen and (max-width: 600px) {
+            .sidebar {
+                width: 100%;
+            }
+
+            .main-content {
+                padding: 10px;
+            }
+
+            .note {
+                padding: 8px;
+                margin-bottom: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -84,7 +98,7 @@
             <div class="menu-item" onclick="showNote('note2')">
                 <div class="menu-item-text">08.01.24</div>
             </div>
-            <div class="menu-item" onclick="showNote('note2')">
+            <div class="menu-item" onclick="showNote('note3')">
                 <div class="menu-item-text">06.01.24</div>
             </div>
             <!-- Add more menu items as needed -->
@@ -96,7 +110,7 @@
             <div class="note" id="note2" style="display: none;">
                 <p>Does a lap really exist?</p>
             </div>
-            <div class="note" id="note2" style="display: none;">
+            <div class="note" id="note3" style="display: none;">
                 <p>i love my bf :]</p>
             </div>    
             <!-- Add more notes here -->
