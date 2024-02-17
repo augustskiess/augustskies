@@ -16,12 +16,11 @@
 
         .container {
             display: flex;
-            flex-direction: column; /* Stack elements vertically on small screens */
-            height: 100%;
+            height: 100vh;
         }
 
         .sidebar {
-            width: 100%; /* Take full width on small screens */
+            width: 25%;
             background-color: #333;
             padding: 20px;
             box-sizing: border-box;
@@ -73,17 +72,16 @@
 
         /* Media query for screens smaller than 600px */
         @media only screen and (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+
             .sidebar {
                 width: 100%;
             }
 
             .main-content {
-                padding: 10px;
-            }
-
-            .note {
-                padding: 8px;
-                margin-bottom: 15px;
+                width: 100%;
             }
         }
     </style>
