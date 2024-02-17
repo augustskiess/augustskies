@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My OneNote-like Webpage</title>
+    <title>notes</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,7 +33,7 @@
 
         .main-content {
             flex: 1;
-            padding: 20px;
+            padding: 80%;
             box-sizing: border-box;
             overflow-y: auto;
         }
@@ -75,20 +75,23 @@
         <div class="sidebar" id="sidebar">
             <h2>Notebooks</h2>
             <div class="menu-item active" onclick="showNote('note1')">
-                <div class="menu-item-text">Note 1</div>
+                <div class="menu-item-text">28.01.24</div>
             </div>
             <div class="menu-item" onclick="showNote('note2')">
-                <div class="menu-item-text">Note 2</div>
+                <div class="menu-item-text">08.01.24</div>
             </div>
             <!-- Add more menu items as needed -->
         </div>
         <div class="main-content">
             <div class="note" id="note1">
-                <p>This is the content of Note 1.</p>
+                <p>the trials and tribulations of being a band. why cant i do it all myself?.</p>
             </div>
             <div class="note" id="note2" style="display: none;">
-                <p>This is the content of Note 2.</p>
+                <p>Does a lap really exist?</p>
             </div>
+            <div class="note" id="note2" style="display: none;">
+                <p>i love my bf :]</p>
+            </div>    
             <!-- Add more notes here -->
         </div>
     </div>
