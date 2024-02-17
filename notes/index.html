@@ -9,82 +9,122 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #F3F3F3;
+            background-color: #1E1E1E;
+            color: #FFF;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            background-color: #0078D4;
-            color: #FFF;
-            padding: 10px;
-            text-align: center;
+            display: flex;
         }
 
         .sidebar {
-            width: 250px;
-            background-color: #F3F3F3;
-            float: left;
-            padding: 10px;
+            width: 25%;
+            background-color: #333;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            color: #FFF;
         }
 
         .main-content {
-            margin-left: 270px;
+            flex: 1;
             padding: 20px;
+            box-sizing: border-box;
         }
 
         .note {
-            background-color: #FFF;
-            border: 1px solid #CCC;
+            background-color: #444;
+            border: 1px solid #666;
             padding: 10px;
             margin-bottom: 20px;
         }
 
-        .footer {
+        .note h3 {
+            margin-top: 0;
+        }
+
+        .menu-item {
+            cursor: pointer;
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: #555;
+            border: 1px solid #666;
+        }
+
+        .menu-item:hover {
+            background-color: #777;
+        }
+
+        .menu-item.active {
             background-color: #0078D4;
+        }
+
+        .menu-item-text {
+            color: #FFF;
+        }
+
+        .menu-item.active .menu-item-text {
+            color: #000;
+        }
+
+        .footer {
+            background-color: #333;
             color: #FFF;
             text-align: center;
             padding: 10px;
-            clear: both;
+            width: 100%;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>My OneNote-like Webpage</h1>
-    </div>
     <div class="container">
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <h2>Notebooks</h2>
-            <ul>
-                <li>Notebook 1</li>
-                <li>Notebook 2</li>
-                <li>Notebook 3</li>
-            </ul>
+            <div class="menu-item" onclick="showNote('note1')">
+                <div class="menu-item-text">Note 1</div>
+            </div>
+            <div class="menu-item" onclick="showNote('note2')">
+                <div class="menu-item-text">Note 2</div>
+            </div>
+            <!-- Add more menu items as needed -->
         </div>
         <div class="main-content">
-            <h2>Notebook 1</h2>
-            <div class="note">
+            <div class="note" id="note1">
                 <h3>Note 1</h3>
                 <p>This is the content of Note 1.</p>
             </div>
-            <div class="note">
+            <div class="note" id="note2">
                 <h3>Note 2</h3>
                 <p>This is the content of Note 2.</p>
             </div>
+            <!-- Add more notes here -->
         </div>
     </div>
     <div class="footer">
         <p>&copy; 2024 My OneNote-like Webpage</p>
     </div>
+
+    <script>
+        function showNote(noteId) {
+            var notes = document.querySelectorAll('.note');
+            notes.forEach(function(note) {
+                note.style.display = 'none';
+            });
+            document.getElementById(noteId).style.display = 'block';
+
+            var menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(function(item) {
+                item.classList.remove('active');
+            });
+            var menuItem = document.querySelector('[onclick="showNote(\'' + noteId + '\')"]');
+            menuItem.classList.add('active');
+        }
+    </script>
 </body>
 </html>
-
-
-28.01.24 - the trials and tribulations of being a band. why cant i do it all myself?<br>
-08.01.24 - Does a lap really exist?<br>
-06.01.24 - i love my bf :]
