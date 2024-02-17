@@ -135,19 +135,19 @@
             // Set the initial latest note as the first one
             var latestNote = notes[0];
 
-            // Loop through each note to find the one with the latest date
+            // Loop through each note to find the one with the highest number after "note"
             notes.forEach(function(note) {
-                // Get the date text from the menu item
-                var dateText = note.querySelector('.menu-item-text').textContent;
+                // Get the note ID (e.g., "note4")
+                var noteId = note.id;
 
-                // Convert the date text to a Date object
-                var noteDate = new Date(dateText);
+                // Extract the number after "note"
+                var noteNumber = parseInt(noteId.substring(4));
 
-                // Get the date of the latest note
-                var latestDate = new Date(latestNote.querySelector('.menu-item-text').textContent);
+                // Get the note ID of the latest note
+                var latestNoteNumber = parseInt(latestNote.id.substring(4));
 
-                // If the current note's date is later than the latest note's date, update the latest note
-                if (noteDate > latestDate) {
+                // If the current note's number is higher than the latest note's number, update the latest note
+                if (noteNumber > latestNoteNumber) {
                     latestNote = note;
                 }
             });
