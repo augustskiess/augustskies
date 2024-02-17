@@ -7,11 +7,11 @@
     <title>notes</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            background-color: #1E1E1E;
-            color: #FFF;
+            background-color: #fffaeb; /* Creamy background */
+            color: #3d3d3d; /* Dark gray text */
         }
 
         .container {
@@ -21,14 +21,16 @@
 
         .sidebar {
             width: 25%;
-            background-color: #333;
+            background-color: #ffccbc; /* Light orange sidebar */
             padding: 20px;
             box-sizing: border-box;
             overflow-y: auto;
         }
 
         .sidebar h2 {
-            color: #FFF;
+            color: #633f3f; /* Dark red heading */
+            font-size: 20px;
+            margin-bottom: 20px;
         }
 
         .main-content {
@@ -39,37 +41,36 @@
         }
 
         .note {
-            background-color: #444;
-            border: 1px solid #666;
-            padding: 10px;
+            background-color: #f0e0c1; /* Light beige note */
+            border: 1px solid #a1887f; /* Brownish border */
+            padding: 15px;
             margin-bottom: 20px;
             box-sizing: border-box;
-            height: 99.75%;
-            overflow-y: auto;
+            border-radius: 5px;
         }
 
         .menu-item {
             cursor: pointer;
             padding: 10px;
             margin-bottom: 5px;
-            background-color: #555;
-            border: 1px solid #666;
+            background-color: #ffccbc; /* Light orange background */
+            border: 1px solid #a1887f; /* Brownish border */
+            border-radius: 5px;
         }
 
         .menu-item:hover {
-            background-color: #777;
+            background-color: #d98261; /* Dark orange on hover */
+            color: #fff; /* White text on hover */
         }
 
         .menu-item.active {
-            background-color: #0078D4;
+            background-color: #633f3f; /* Dark red active item */
+            color: #fff; /* White text on active item */
         }
 
         .menu-item-text {
-            color: #FFF;
-        }
-
-        .menu-item.active .menu-item-text {
-            color: #000;
+            color: #3d3d3d; /* Dark gray text */
+            font-size: 14px;
         }
 
         /* Media query for screens smaller than 600px */
@@ -91,33 +92,33 @@
 <body>
     <div class="container">
         <div class="sidebar" id="sidebar">
-            <h2>notes</h2>
+            <h2>Notes</h2>
             <div class="menu-item active" onclick="showNote('note4')">
-                <div class="menu-item-text">17.02.24</div>
+                <div class="menu-item-text">17.02.24 - Finally completed my assignment for college! And on time too. Unlike the other 2 I have to go.</div>
             </div>
             <div class="menu-item active" onclick="showNote('note3')">
-                <div class="menu-item-text">28.01.24</div>
+                <div class="menu-item-text">28.01.24 - The trials and tribulations of being in a band. Why can't I do it all myself?</div>
             </div>
             <div class="menu-item" onclick="showNote('note2')">
-                <div class="menu-item-text">08.01.24</div>
+                <div class="menu-item-text">08.01.24 - Does a lap really exist?</div>
             </div>
             <div class="menu-item" onclick="showNote('note1')">
-                <div class="menu-item-text">06.01.24</div>
+                <div class="menu-item-text">06.01.24 - I love my bf :]</div>
             </div>
             <!-- Add more menu items as needed -->
         </div>
         <div class="main-content">
             <div class="note" id="note1">
-                <p>the trials and tribulations of being in a band. why cant i do it all myself? why cant i do it all myself?</p>
+                <p>The trials and tribulations of being in a band. Why can't I do it all myself? Why can't I do it all myself?</p>
             </div>
             <div class="note" id="note2" style="display: none;">
                 <p>Does a lap really exist?</p>
             </div>
             <div class="note" id="note3" style="display: none;">
-                <p>i love my bf :]</p>
+                <p>I love my bf :]</p>
             </div>    
             <div class="note" id="note4" style="display: none;">
-                <p>finally completed my assignment for college! and on time too. unlike the other 2 i have to go</p>
+                <p>Finally completed my assignment for college! And on time too. Unlike the other 2 I have to go.</p>
             </div>    
             <!-- Add more notes here -->
         </div>
