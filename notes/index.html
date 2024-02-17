@@ -1,129 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/favicon.png">
-    <title>notes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1E1E1E;
-            color: #FFF;
-        }
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #1E1E1E;
+        color: #FFF;
+    }
 
-        .container {
-            display: flex;
-            height: 100vh;
-        }
+    .container {
+        display: flex;
+        height: 100vh;
+    }
 
-        .sidebar {
-            width: 25%;
-            background-color: #333;
-            padding: 20px;
-            box-sizing: border-box;
-            overflow-y: auto;
-        }
+    .sidebar {
+        width: 25%;
+        background-color: #333;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
 
-        .sidebar h2 {
-            color: #FFF;
-        }
+    .sidebar h2 {
+        color: #FFF;
+    }
 
-        .main-content {
-            flex: 1;
-            padding: 20px;
-            box-sizing: border-box;
-            overflow-y: auto;
-        }
+    .main-content {
+        flex: 1;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        font-size: 16px; /* Set the font size to match the default font size */
+    }
 
-        .note {
-            background-color: #444;
-            border: 1px solid #666;
-            padding: 10px;
-            margin-bottom: 20px;
-            box-sizing: border-box;
-        }
+    .note {
+        background-color: #444;
+        border: 1px solid #666;
+        padding: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        height: 200px;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
 
-        .menu-item {
-            cursor: pointer;
-            padding: 10px;
-            margin-bottom: 5px;
-            background-color: #555;
-            border: 1px solid #666;
-        }
+    .menu-item {
+        cursor: pointer;
+        padding: 10px;
+        margin-bottom: 5px;
+        background-color: #555;
+        border: 1px solid #666;
+    }
 
-        .menu-item:hover {
-            background-color: #777;
-        }
+    .menu-item:hover {
+        background-color: #777;
+    }
 
-        .menu-item.active {
-            background-color: #0078D4;
-        }
+    .menu-item.active {
+        background-color: #0078D4;
+    }
 
-        .menu-item-text {
-            color: #FFF;
-        }
+    .menu-item-text {
+        color: #FFF;
+    }
 
-        .menu-item.active .menu-item-text {
-            color: #000;
-        }
+    .menu-item.active .menu-item-text {
+        color: #000;
+    }
 
-        /* Apply Monaco font to text inside the main content area */
-        .main-content {
-            font-family: Monaco, Consolas, 'Lucida Console', monospace;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="sidebar" id="sidebar">
-            <h2>Notebooks</h2>
-            <div class="menu-item active" onclick="showNote('note1')">
-                <div class="menu-item-text">28.01.24</div>
-            </div>
-            <div class="menu-item" onclick="showNote('note2')">
-                <div class="menu-item-text">08.01.24</div>
-            </div>
-            <div class="menu-item" onclick="showNote('note3')">
-                <div class="menu-item-text">06.01.24</div>
-            </div>
-            <!-- Add more menu items as needed -->
-        </div>
-        <div class="main-content">
-            <div class="note" id="note1">
-                <p>the trials and tribulations of being a band. why cant i do it all myself?.</p>
-            </div>
-            <div class="note" id="note2" style="display: none;">
-                <p>Does a lap really exist?</p>
-            </div>
-            <div class="note" id="note3" style="display: none;">
-                <p>i love my bf :]</p>
-            </div>    
-            <!-- Add more notes here -->
-        </div>
-    </div>
-
-    <script>
-        window.onload = function() {
-            showNote('note1');
-        };
-
-        function showNote(noteId) {
-            var notes = document.querySelectorAll('.note');
-            notes.forEach(function(note) {
-                note.style.display = 'none';
-            });
-            document.getElementById(noteId).style.display = 'block';
-
-            var menuItems = document.querySelectorAll('.menu-item');
-            menuItems.forEach(function(item) {
-                item.classList.remove('active');
-            });
-            var menuItem = document.querySelector('[onclick="showNote(\'' + noteId + '\')"]');
-            menuItem.classList.add('active');
-        }
-    </script>
-</body>
-</html>
+    /* Apply Monaco font to text inside the main content area */
+    .main-content {
+        font-family: Monaco, Consolas, 'Lucida Console', monospace;
+    }
+</style>
