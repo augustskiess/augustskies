@@ -31,7 +31,7 @@
 
         .menu-items {
             overflow-y: auto; /* Added */
-            height: calc(100% - 60px); /* Adjusted height */
+            height: calc(100% - 90px); /* Adjusted height */
             padding-right: 5px; /* Added right padding to avoid scrollbar overlay */
         }
 
@@ -77,6 +77,26 @@
             font-size: 14px;
         }
 
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            width: 75%; /* Adjusted width */
+            height: 100%; /* Adjusted height */
+        }
+
+        .note {
+            background-color: #f0e0c1; /* Light beige note */
+            border: 1px solid #a1887f; /* Brownish border */
+            padding: 15px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            overflow-y: auto;
+            height: 100%; /* Adjusted height */
+        }
+
         /* Media query for screens smaller than 600px */
         @media only screen and (max-width: 600px) {
             .container {
@@ -89,6 +109,7 @@
 
             .main-content {
                 width: 100%;
+                height: auto;
             }
         }
     </style>
