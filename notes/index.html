@@ -29,46 +29,28 @@
             position: relative; /* Added */
         }
 
-        .menu-item.active {
-            overflow-y: auto; /* Apply scrolling to active menu items only */
+        .menu-items {
+            overflow-y: auto; /* Added */
+            height: calc(100% - 60px); /* Adjusted height */
+            padding-right: 5px; /* Added right padding to avoid scrollbar overlay */
         }
 
-        .menu-item.active::-webkit-scrollbar {
-            width: 3px; /* Thin scrollbar */
-            background-color: #333; /* Greyish-black background */
+        .menu-items::-webkit-scrollbar {
+            width: 5px; /* Width of scrollbar */
+            background-color: transparent; /* Transparent background */
         }
 
-        .menu-item.active::-webkit-scrollbar-thumb {
-            background-color: #666; /* Dark greyish-black scrollbar thumb */
+        .menu-items::-webkit-scrollbar-thumb {
+            background-color: #333; /* Greyish-black scrollbar */
             border-radius: 5px; /* Rounded corners */
         }
 
-        .menu-item.active:hover::-webkit-scrollbar-thumb {
-            background-color: #999; /* Lighter greyish-black on hover */
+        .menu-items:hover::-webkit-scrollbar-thumb {
+            background-color: #555; /* Darker greyish-black on hover */
         }
 
-        .sidebar h2 {
-            color: #633f3f; /* Dark red heading */
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-
-        .main-content {
-            flex: 1;
-            padding: 20px;
-            box-sizing: border-box;
-            overflow-y: auto;
-        }
-
-        .note {
-            background-color: #f0e0c1; /* Light beige note */
-            border: 1px solid #a1887f; /* Brownish border */
-            padding: 15px;
-            margin-bottom: 20px;
-            box-sizing: border-box;
-            border-radius: 5px;
-            height: 99.75%;
-            overflow-y: auto;
+        .menu-items:hover {
+            opacity: 0.8; /* Fading effect on hover */
         }
 
         .menu-item {
@@ -115,43 +97,44 @@
     <div class="container">
         <div class="sidebar" id="sidebar">
             <h2>notes</h2>
-            <div class="menu-item active" onclick="showNote('note12')">
-                <div class="menu-item-text">18.03.24</div>
+            <div class="menu-items"> <!-- New class for scrollable items -->
+                <div class="menu-item active" onclick="showNote('note12')">
+                    <div class="menu-item-text">18.03.24</div>
+                </div>
+                <div class="menu-item active" onclick="showNote('note11')">
+                    <div class="menu-item-text">17.03.24</div>
+                </div>
+                <div class="menu-item active" onclick="showNote('note10')">
+                    <div class="menu-item-text">16.03.24</div>
+                </div>
+                <div class="menu-item active" onclick="showNote('note9')">
+                    <div class="menu-item-text">09.03.24</div>
+                </div>
+                <div class="menu-item active" onclick="showNote('note8')">
+                    <div class="menu-item-text">05.03.24</div>
+                </div>
+                <div class="menu-item active" onclick="showNote('note7')">
+                    <div class="menu-item-text">01.03.24</div>
+                </div>
+                <div class="menu-item active" onclick="showNote('note6')">
+                    <div class="menu-item-text">23.02.24</div>
+                </div>
+                <div class="menu-item active" onclick="showNote('note5')">
+                    <div class="menu-item-text">21.02.24</div>
+                </div>
+                <div class="menu-item active" onclick="showNote('note4')">
+                    <div class="menu-item-text">17.02.24</div>
+                </div>
+                <div class="menu-item active" onclick="showNote('note3')">
+                    <div class="menu-item-text">28.01.24</div>
+                </div>
+                <div class="menu-item" onclick="showNote('note2')">
+                    <div class="menu-item-text">08.01.24</div>
+                </div>
+                <div class="menu-item" onclick="showNote('note1')">
+                    <div class="menu-item-text">06.01.24</div>
+                </div>
             </div>
-            <div class="menu-item active" onclick="showNote('note11')">
-                <div class="menu-item-text">17.03.24</div>
-            </div>
-            <div class="menu-item active" onclick="showNote('note10')">
-                <div class="menu-item-text">16.03.24</div>
-            </div>
-            <div class="menu-item active" onclick="showNote('note9')">
-                <div class="menu-item-text">09.03.24</div>
-            </div>
-            <div class="menu-item active" onclick="showNote('note8')">
-                <div class="menu-item-text">05.03.24</div>
-            </div>
-            <div class="menu-item active" onclick="showNote('note7')">
-                <div class="menu-item-text">01.03.24</div>
-            </div>
-            <div class="menu-item active" onclick="showNote('note6')">
-                <div class="menu-item-text">23.02.24</div>
-            </div>
-            <div class="menu-item active" onclick="showNote('note5')">
-                <div class="menu-item-text">21.02.24</div>
-            </div>
-            <div class="menu-item active" onclick="showNote('note4')">
-                <div class="menu-item-text">17.02.24</div>
-            </div>
-            <div class="menu-item active" onclick="showNote('note3')">
-                <div class="menu-item-text">28.01.24</div>
-            </div>
-            <div class="menu-item" onclick="showNote('note2')">
-                <div class="menu-item-text">08.01.24</div>
-            </div>
-            <div class="menu-item" onclick="showNote('note1')">
-                <div class="menu-item-text">06.01.24</div>
-            </div>
-            <!-- Add more menu items as needed -->
         </div>
         <div class="main-content">
             <div class="note" id="note1" style="display: none;">
@@ -182,13 +165,13 @@
                 <p>listen to <a href="https://open.spotify.com/album/13r6eqjYlKELFQlNvVCBz1">djesse vol. 4</a></p>
             </div> 
             <div class="note" id="note10" style="display: none;">
-                <p>i love him / we got our plan now</p>
+                <p>i love him / we got our plan now</a></p>
             </div>
             <div class="note" id="note11" style="display: none;">
-                <p>hope you remember me on this special day, and its not so special</p>
+                <p>hope you remember me on this special day, and its not so special</a></p>
             </div> 
             <div class="note" id="note12" style="display: none;">
-                <p>https://open.spotify.com/track/5ra1pQ0J4NQIaDgkSwfAgn</p>
+                <p>https://open.spotify.com/track/5ra1pQ0J4NQIaDgkSwfAgn</a></p>
             </div> 
             <!-- Add more notes here -->
         </div>
