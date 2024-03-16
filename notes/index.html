@@ -26,6 +26,25 @@
             padding: 20px;
             box-sizing: border-box;
             overflow-y: auto;
+            position: relative; /* Added */
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 5px; /* Width of scrollbar */
+            background-color: transparent; /* Transparent background */
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background-color: #000; /* Black scrollbar */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        .sidebar:hover::-webkit-scrollbar-thumb {
+            background-color: #333; /* Darker black on hover */
+        }
+
+        .sidebar:hover {
+            opacity: 0.8; /* Fading effect on hover */
         }
 
         .sidebar h2 {
